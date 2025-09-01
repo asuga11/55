@@ -1,0 +1,16 @@
+package mn.onlineshop.repository;
+
+import mn.onlineshop.model.entity.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface CategoryRepositpry extends JpaRepository<Category, Long> {
+
+    List<Category> name(String name);
+
+    List<Category> findByCategoryName(String categoryName);
+}
